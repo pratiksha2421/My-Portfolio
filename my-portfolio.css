@@ -1,0 +1,1140 @@
+/* ========== BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* ========== COMMON ========== */
+.background {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  display: inline-block;
+  box-shadow: 8px 8px 25px 1px black;
+  margin-left: 20px;
+}
+
+a:hover {
+  background-color: pink;
+  color: black;
+  box-shadow: 1px 1px 30px rgba(255, 255, 255, 0.692);
+  transform: translateY(-4px);
+}
+
+a:active {
+  transform: translateY(2px) scale(0.95);
+}
+
+/* ========== HOME ========== */
+.container {
+  background-color: rgba(255, 255, 255, 0.071);
+  min-height: 600px;
+  max-width: 1300px;
+  width: 100%;
+  margin: 35px;
+  border-radius: 30px;
+  box-shadow: 1px 1px 50px rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.para-2 {
+  padding: 30px;
+}
+
+.link {
+  margin-left: 340px;
+}
+
+
+img{
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  float: right;
+  margin: 70px;
+  outline: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 1px 1px 30px rgba(255, 255, 255, 0.4);
+  
+}
+
+.para1 {
+  color: aqua;
+  margin: 100px;
+  font-size: 35px;
+  line-height: 50px;
+  font-weight: bold;
+}
+
+.button {
+  padding: 10px 40px;
+  font-size: 23px;
+  border-radius: 30px;
+  background-color: rgba(0, 255, 255, 0.4);
+  margin-left: 100px;
+  margin-bottom:60px;
+}
+
+/* ========== ANIMATIONS (HOME ONLY) ========== */
+.slide-left,
+.slide-right,
+.slide-down {
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.slide-left {
+  transform: translateX(-60px);
+  animation-name: slideLeft;
+}
+
+.slide-right {
+  transform: translateX(60px);
+  animation-name: slideRight;
+  animation-delay: 0.3s;
+}
+
+.slide-down {
+  transform: translateY(-50px);
+  animation-name: slideDown;
+}
+
+@keyframes slideLeft {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ========== ABOUT ME ========== */
+.box {
+  background-color: rgba(255, 255, 255, 0.071);
+  height: 600px;
+  width: 1300px;
+  margin: 40px;
+  border-radius: 30px;
+  box-shadow: 1px 1px 50px rgba(255, 255, 255, 0.3);
+  transform: translateY(60px);
+  margin-top: 100px;
+
+}
+
+/* About box – normal visible */
+#about-me .box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Click par box upar se aaye */
+#about-me:target .box {
+  animation: aboutBox 1s ease forwards;
+}
+
+@keyframes aboutBox {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading animation */
+#about-me:target h1 {
+  opacity: 0;
+  animation: aboutHead 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes aboutHead {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Paragraph animation (LEFT se) */
+#about-me:target .para-text {
+  opacity: 0;
+  animation: aboutText 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes aboutText {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+h1 {
+  color: antiquewhite;
+  text-align: center;
+  font-size: 80px;
+  letter-spacing: 2px;
+  margin-top: 30px;
+}
+
+.para-text {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 50px;
+  font-style: italic;
+  line-height: 45px;
+  letter-spacing: 2px;
+  color: rgba(0, 255, 255, 0.758);
+
+}
+
+.about-me-back {
+  display: inline-block;
+  margin-left: 560px;
+  margin-top: 40px;
+  padding: 5px 40px;
+  background-color: rgba(0, 255, 255, 0.384);
+}
+
+
+/* ========== SKILLS ========== */
+
+.skills-container {
+  background-color: rgba(255, 255, 255, 0.071);
+  height: 1240px;
+  width: 1300px;
+  margin-top: 100px;
+  border-radius: 30px;
+  box-shadow: 1px 1px 50px rgba(255, 255, 255, 0.3);
+}
+
+.heading-2 {
+  font-size: 60px;
+}
+
+
+.para3 {
+font-weight: lighter;
+  text-align: center;
+  color: rgba(127, 255, 212, 0.783);
+  font-size: 17px;
+  margin-top: 15px;
+  
+}
+
+.fimg img{
+  height:180px;
+  width:180px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 50px rgba(255, 255, 255, 0.094);
+  position: relative;
+  transition: all 0.4s ease;
+  transform: translateZ(0);
+  display: flex;
+  align-self: center;
+  top: 60px;
+  right: 38%;
+}
+
+.fimg img:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(0, 255, 255, 0.32);
+  z-index: 10;
+
+}
+
+.skills-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+.skill-1{
+  position:relative;
+  color: white;
+  border:1px solid white;
+  height:200px;
+  width:250px;
+  left:100px;
+  border-radius: 30px;
+  text-align: center;
+  padding:20px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  transition: all 0.4 ease;
+}
+.skill-1,
+.skill-2, .skill-3,.skill-4,.skill-5,.skills-6,.skill-7,.web-skillks
+:hover{
+transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(20, 220, 255, 0.2);
+}
+.skill-2{
+  position: relative;
+  left:920px;
+  color: white;
+  border:1px solid white;
+  height:200px;
+  width:250px;
+  bottom:400px;
+  border-radius: 30px;
+  text-align: center;
+  padding:20px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  transition: all 0.4 ease;
+}
+.skill-3{
+  
+  position: relative;
+  top:100px;
+  left:95px;
+  color: white;
+  border:1px solid white;
+  height:200px;
+  width:250px;
+  border-radius: 30px;
+  text-align: center;
+  padding:20px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  transition: all 0.4 ease;
+}
+.skill-4{
+  
+  position: relative;
+  bottom:300px;
+  left:920px;
+  color: white;
+  border:1px solid white;
+  height:200px;
+  width:250px;
+  border-radius: 30px;
+  text-align: center;
+  padding:20px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  transition: all 0.4 ease;
+}
+.web-skills{
+   
+  position: relative;
+  top:170px;
+  left:160px;
+  color: white;
+  border:1px solid white;
+  height:240px;
+  width:340px;
+  border-radius: 30px;
+  text-align: center;
+  padding:40px 20px 40px 20px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 25px;
+  transition: all 0.4 ease;
+}
+.skill-5{
+ 
+  position: relative;
+  top:700px;
+  right:600px;
+  color: white;
+  border:1px solid white;
+  height:200px;
+  width:250px;
+  border-radius: 30px;
+  text-align: center;
+  padding:20px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  transition: all 0.4 ease;
+}
+.skill-6{
+  
+  position: relative;
+  top:500px;
+  right:200px;
+  color: white;
+  border:1px solid white;
+  height:200px;
+  width:250px;
+  border-radius: 30px;
+  text-align: center;
+  padding:20px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  transition: all 0.4 ease;
+}
+.skill-7{
+  
+  position: relative;
+  top:300px;
+  left:200px;
+  color: white;
+  border:1px solid white;
+  height:200px;
+  width:250px;
+  border-radius: 30px;
+  text-align: center;
+  padding:20px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  transition: all 0.4 ease;
+}
+big{
+  color: rgba(0, 255, 255, 0.854);
+}
+
+.repo-link-1{
+  font-size: 12px;
+  margin-top:25px;
+  margin-left:8px;
+  background-color: rgba(0, 255, 255, 0.276);
+}
+.repo-link-2{
+  font-size: 12px;
+  margin-top:25px;
+  margin-left:8px;
+  background-color: rgba(0, 255, 255, 0.276);
+}
+.repo-link-3{
+font-size: 12px;
+  margin-top:25px;
+  margin-left:8px;
+  background-color: rgba(0, 255, 255, 0.276);
+}
+.repo-link-4{
+  font-size: 12px;
+  margin-top:25px;
+  margin-left:8px;
+  background-color: rgba(0, 255, 255, 0.276);
+}
+.repo-link-5{
+  font-size: 12px;
+  margin-top:27px;
+  margin-left:8px;
+  background-color: rgba(0, 255, 255, 0.276);
+}
+.repo-link-6{
+  font-size: 12px;
+  margin-top:10px;
+  margin-left:8px;
+  background-color: rgba(0, 255, 255, 0.276);
+}
+.repo-link-7{
+  font-size: 12px;
+  margin-top:25px;
+  margin-left:8px;
+  background-color: rgba(0, 255, 255, 0.276);
+}
+
+.para-level{
+  font-size: 20px;
+  margin-top:6px;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+.skills-back{
+  position:relative;
+  top:60px;
+  right:403px;
+  background-color: rgba(0, 255, 255, 0.384);
+  font-size:15px;
+  font-style: normal;
+  font-weight: lighter;
+   padding: 5px 40px; 
+}
+#skills:target .heading-2 {
+  animation: skillhead 0.8s ease forwards;
+}
+
+@keyframes skillhead {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#skills:target .fimg {
+  animation: skillImage 1s ease forwards;
+}
+
+@keyframes skillImage {
+  from {
+    opacity: 0;
+    transform: translateX(-120px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+
+
+
+/* ================= EDUCATION BASE ================= */
+
+.education-box {
+  background-color: rgba(255, 255, 255, 0.071);
+  height: 650px;
+  width: 1300px;
+  margin: 40px;
+  margin-top:100px;
+  border-radius: 30px;
+  box-shadow: 1px 1px 50px rgba(255, 255, 255, 0.3);
+}
+
+.heading-3 {
+  font-size: 80px;
+  margin-top: 10px;
+  color: antiquewhite;
+  text-align: center;
+}
+
+/* image */
+.education-img {
+  margin-top: 120px;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+/* text box */
+.div1 {
+  height: 400px;
+  width: 800px;
+  background-color: rgba(255, 255, 255, 0.011);
+  margin: 70px 0 20px 60px;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+}
+
+/* text */
+.para {
+  color: rgba(0, 255, 255, 0.7);
+  font-size: 20px;
+  padding: 20px;
+}
+
+.big1 {
+  color: aqua;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+/* hover (same as before) */
+.education-img:hover,
+.div1:hover,
+.para:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(20, 220, 255, 0.2);
+}
+
+/* ================= CLICK ANIMATIONS ONLY ================= */
+
+/* HEADING */
+#education:target .heading-3 {
+  animation: eduHeading 0.8s ease forwards;
+}
+
+@keyframes eduHeading {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* IMAGE */
+#education:target .education-img {
+  animation: eduImage 1s ease forwards;
+}
+
+@keyframes eduImage {
+  from {
+    opacity: 0;
+    transform: translateX(-120px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* BOX */
+#education:target .div1 {
+  animation: eduBox 1s ease forwards;
+}
+
+@keyframes eduBox {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PARAGRAPHS */
+#education:target .para.left {
+  animation: eduLeft 0.8s ease forwards;
+}
+
+#education:target .para.right {
+  animation: eduRight 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+#education:target .para.bottom {
+  animation: eduBottom 0.8s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes eduLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes eduRight {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes eduBottom {
+  from {
+    opacity: 0;
+    transform: translateY(120px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.education-back {
+  display: inline-block;
+  margin-left: 480px;
+  margin-top: 40px;
+  padding: 5px 40px;
+  background-color: rgba(0, 255, 255, 0.384);
+}
+
+/* ================= CONTACT ME ================= */
+
+.contact-box {
+  background-color: rgba(255, 255, 255, 0.071);
+  height: 650px;
+  width: 1300px;
+  margin: 40px;
+  margin-top:100px;
+  border-radius: 30px;
+  box-shadow: 1px 1px 50px rgba(255, 255, 255, 0.3);
+
+}
+
+.contact-content {
+  color: rgba(0, 255, 255, 0.7);
+  font-size: 20px;
+  margin: 10px 0px 0px 240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-heading {
+  opacity: 1;
+}
+
+#contact:target .contact-heading {
+  animation: contactHead 0.8s ease forwards;
+}
+
+@keyframes contactHead {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-img {
+  box-shadow: 1px 1px 50px rgba(255, 255, 255, 0.126);
+  margin: 70px 0px 0px 70px;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  width: 350px;
+  height: 350px;
+  float: left;
+}
+
+#contact:target .contact-img {
+  animation: contactImg 1s ease forwards;
+}
+
+@keyframes contactImg {
+  from {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* hover pop */
+.contact-img:hover {
+  transform: translateY(-15px) scale(1.06);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(0, 180, 255, 0.6);
+  z-index: 10;
+}
+
+.contact-links {
+  height: 400px;
+  width: 740px;
+  background-color: rgba(255, 255, 255, 0.011);
+  margin: 40px 0 20px 500px;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#contact:target .contact-item {
+  animation: contactLinks 1s ease forwards;
+}
+
+@keyframes contactLinks {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.contact-item {
+  padding: 20px 20px;
+  font-size: 20px;
+  border-radius: 20px;
+  border: 2px solid black;
+  box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.189);
+  margin: 2px 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  transform: translateX(0);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(0, 180, 255, 0.6);
+  color: black;
+  z-index: 10;
+  background-color: rgba(0, 255, 255, 0.523);
+}
+
+.contact-me {
+  background-color: rgba(0, 255, 255, 0.311);
+  padding: 8px;
+  width: 150px;
+  text-align: center;
+
+}
+
+/* ================= CONTACT ANIMATIONS ONLY ================= */
+
+/* 1️⃣ HEADING – TOP TO BOTTOM */
+#contact-me:target .contact-heading {
+  animation: contactHead 0.9s ease forwards;
+}
+
+@keyframes contactHead {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2️⃣ CONTACT LINKS – RIGHT TO LEFT (ONE BY ONE) */
+#contact-me:target .contact-item {
+  opacity: 0;
+  animation: contactLinks 0.9s ease forwards;
+}
+
+#contact-me:target .contact-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+#contact-me:target .contact-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+#contact-me:target .contact-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+#contact-me:target .contact-item:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes contactLinks {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 3️⃣ IMAGE – LEFT TO RIGHT */
+#contact-me:target .contact-img {
+  animation: contactImg 1s ease forwards;
+}
+
+@keyframes contactImg {
+  from {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 4️⃣ GO TO HOME BUTTON – BOTTOM TO TOP */
+#contact-me:target .contact-me {
+  animation: contactBtn 0.9s ease forwards;
+}
+
+@keyframes contactBtn {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SUB-LINE SLIDE FROM BOTTOM */
+#contact-me:target .contact-content {
+  animation: contactText 0.9s ease forwards;
+}
+
+@keyframes contactText {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+    /* 👈 niche se */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.para-location{
+  color:aquamarine;
+ font-size: 17px;
+ margin-left:240px;
+}
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  /* ===== GLOBAL ===== */
+  body{
+    overflow-x: hidden;
+  }
+
+  h1{
+    font-size: 38px;
+  }
+
+  .background{
+    padding: 0 10px;
+  }
+
+  a{
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  /* ===== NAVBAR ===== */
+  .para-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .link{
+    margin-left: 0;
+  }
+
+  /* ===== HOME ===== */
+  .container{
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+
+  .container img{
+    float: none;
+    display: block;
+    margin: 30px auto 10px;
+    height: 220px;
+    width: 220px;
+  }
+
+  .para1{
+    margin: 20px;
+    font-size: 22px;
+    line-height: 34px;
+    text-align: center;
+  }
+
+  .button{
+    margin: 15px auto;
+    display: block;
+    font-size: 18px;
+  }
+
+  /* ===== ABOUT ===== */
+  .box{
+    width: 100%;
+    height: auto;
+    margin: 30px 0;
+    padding-bottom: 30px;
+  }
+
+  .para-text{
+    font-size: 18px;
+    line-height: 30px;
+    padding: 0 15px;
+  }
+
+  .about-me-back{
+    margin: 20px auto;
+    display: block;
+  }
+
+  /* ===== SKILLS ===== */
+  .skills-container{
+    width: 100%;
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .fimg img{
+    position: static;
+    display: block;
+    margin: 30px auto;
+  }
+
+  .skills-row{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-1,
+  .skill-2,
+  .skill-3,
+  .skill-4,
+  .skill-5,
+  .skill-6,
+  .skill-7,
+  .web-skills{
+    position: static;
+    width: 90%;
+    height: auto;
+    margin: 15px 0;
+    font-size: 18px;
+  }
+
+  .web-skills{
+    font-size: 20px;
+  }
+
+  .skills-back{
+    position: static;
+    margin: 20px auto;
+    display: block;
+  }
+
+  
+
+  /* ===== EDUCATION ===== */
+  .education-box{
+    width: 100%;
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .education-img{
+    display: block;
+    margin: 30px auto;
+    width: 90%;
+    height: auto;
+  }
+
+  .div1{
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+  }
+
+  .para{
+    font-size: 17px;
+  }
+
+  .education-back{
+    margin: 20px auto;
+    display: block;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-box{
+    width: 100%;
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .contact-content{
+    margin: 10px;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .contact-img{
+    float: none;
+    display: block;
+    margin: 30px auto;
+    width: 260px;
+    height: 260px;
+  }
+
+  .contact-links{
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .contact-item{
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .para-location{
+    margin-left: 0;
+    text-align: center;
+    font-size: 15px;
+  }
+}
